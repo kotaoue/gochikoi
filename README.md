@@ -72,3 +72,4 @@ https://youtu.be/WLsOdyQ2epk
 
 ## Links
 - [甲賀流忍者ぽんぽこ🍃たぬき！](http://x.com/ponpokoka)
+- [ガチ恋検索](https://x.com/search?q=%E3%82%AC%E3%83%81%E6%81%8B%20(from%3Aponpokoka)&src=typed_query)
