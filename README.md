@@ -1,21 +1,26 @@
 # gochikoi
+
 あーうーひひーん
 
 ## example
 
-### Case1 
-https://x.com/ponpokoka/status/2000002927617073152
-```
+### Case1
+
+<https://x.com/ponpokoka/status/2000002927617073152>
+
+```text
 あ〜う〜❤️おひちゃち🩷🎀ちぇぶんのちいかわちゃんかわちぃちゅぎね👶🥛にゃんじゃかかえーがちょーかやいらちいわよ🌶️⁉️きゃああああ👹わァ…🥺🪞かやちゃぎてきょーにょめいくにちーくはふよーね👩🫵
 ```
 
-```
+```text
 あ〜う〜❤️おひさし🩷🎀セブンのちいかわちゃんかわいすぎね👶🥛なんだかカレーがちょうからいらしいわよ🌶️⁉️きゃああああ👹わァ…🥺🪞からすぎてきょうのメイクにチークはふようね👩🫵
 ```
 
 ### Case2
-https://x.com/ponpokoka/status/1472886059428360198
-```
+
+<https://x.com/ponpokoka/status/1472886059428360198>
+
+```text
 💞💞💞あ〜う〜ひひ〜ん💞💞💞
 
 にゃんちょにゃんにゃんちょ🐱🐱
@@ -28,7 +33,7 @@ https://x.com/ponpokoka/status/1472886059428360198
 きょうはちゃくらおんじょんちゅるからこうちんなち！ごめんにぇ？
 ```
 
-```
+```text
 💞💞💞あ〜う〜ひひ〜ん💞💞💞
 
 なんとなんと🐱🐱
@@ -42,8 +47,10 @@ https://x.com/ponpokoka/status/1472886059428360198
 ```
 
 ### Case3
-https://x.com/ponpokoka/status/1474326647340167171
-```
+
+<https://x.com/ponpokoka/status/1474326647340167171>
+
+```text
 あちゃちのこちょ、
 あんじぇんっておもっちぇた👨‍✈️😺？
 
@@ -56,7 +63,7 @@ https://youtu.be/WLsOdyQ2epk
 ぜひみなちゃいよね🍥🍥ばばーん
 ```
 
-```
+```text
 あたしのこと、
 あんぜんっておもってた👨‍✈️😺？
 
@@ -69,7 +76,7 @@ https://youtu.be/WLsOdyQ2epk
 ぜひみなさいよね🍥🍥ばばーん
 ```
 
-
 ## Links
+
 - [甲賀流忍者ぽんぽこ🍃たぬき！](http://x.com/ponpokoka)
 - [ガチ恋検索](https://x.com/search?q=%E3%82%AC%E3%83%81%E6%81%8B%20(from%3Aponpokoka)&src=typed_query)
