@@ -12,6 +12,24 @@
 go run . "ちこきゅちこきゅ〜"
 ```
 
+## Normalization Flow
+
+- `specialRules` (fixed special patterns)
+  - Applies fixed string replacements for known patterns on each token.
+  - Example: `はっぴぃ` -> `ハッピー`, `ばえんたいん` -> `バレンタイン`
+- `normalRules` (regular per-token rules)
+  - Applies regex-based normalization per token for common in-token sound/spelling variations.
+  - Example: `ちこきゅ` -> `ちこく`, `ちゃ` -> `た`
+- `finalRules` (final post-processing after join)
+  - Applies regex-based normalization after tokens are joined, including ending-like and boundary-crossing adjustments.
+  - Example: `ごめんにゃ` -> `ごめんね`, `にゃい` -> `ない`
+
+- Transformation image for input text:
+  - Input: `ちこきゅちこきゅ〜`
+  - After `specialRules`: `ちこきゅちこきゅ〜`
+  - After `normalRules`: `ちこくちこく〜`
+  - After `finalRules`: `ちこくちこく〜`
+
 ## example
 
 ### Case1
