@@ -7,7 +7,7 @@ import (
 	"github.com/ikawaha/kagome/v2/tokenizer"
 )
 
-var tokenized = mustNewTokenizer()
+var tok = mustNewTokenizer()
 
 func mustNewTokenizer() *tokenizer.Tokenizer {
 	t, err := tokenizer.New(ipa.Dict(), tokenizer.OmitBosEos())
@@ -31,7 +31,7 @@ func normalizeToken(surface string) string {
 }
 
 func Translate(input string) string {
-	tokens := tokenized.Tokenize(input)
+	tokens := tok.Tokenize(input)
 	if len(tokens) == 0 {
 		return input
 	}
@@ -39,8 +39,8 @@ func Translate(input string) string {
 	var builder strings.Builder
 	builder.Grow(len(input))
 
-	for _, tok := range tokens {
-		surface := tok.Surface
+	for _, t := range tokens {
+		surface := t.Surface
 		if surface == "" {
 			continue
 		}
