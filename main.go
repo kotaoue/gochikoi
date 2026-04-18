@@ -12,7 +12,12 @@ func main() {
 	args := os.Args[1:]
 	if len(args) > 0 {
 		for _, arg := range args {
-			fmt.Println(gachikoi.Translate(arg))
+			out, err := gachikoi.Translate(arg)
+			if err != nil {
+				fmt.Fprintln(os.Stderr, err)
+				os.Exit(1)
+			}
+			fmt.Println(out)
 		}
 		return
 	}
@@ -27,5 +32,10 @@ func main() {
 		return
 	}
 
-	fmt.Print(gachikoi.Translate(string(in)))
+	out, err := gachikoi.Translate(string(in))
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+	fmt.Print(out)
 }

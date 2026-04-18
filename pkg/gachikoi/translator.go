@@ -1,20 +1,25 @@
 package gachikoi
 
 import (
+	"fmt"
 	"strings"
+	"sync"
 
 	"github.com/ikawaha/kagome-dict/ipa"
 	"github.com/ikawaha/kagome/v2/tokenizer"
 )
 
-var tok = mustNewTokenizer()
+var (
+	tok     *tokenizer.Tokenizer
+	tokOnce sync.Once
+	tokErr  error
+)
 
-func mustNewTokenizer() *tokenizer.Tokenizer {
-	t, err := tokenizer.New(ipa.Dict(), tokenizer.OmitBosEos())
-	if err != nil {
-		panic(err)
-	}
-	return t
+func getTokenizer() (*tokenizer.Tokenizer, error) {
+	tokOnce.Do(func() {
+		tok, tokErr = tokenizer.New(ipa.Dict(), tokenizer.OmitBosEos())
+	})
+	return tok, tokErr
 }
 
 func normalizeToken(surface string) string {
@@ -30,17 +35,22 @@ func normalizeToken(surface string) string {
 	return normalized
 }
 
-func Translate(input string) string {
-	tokens := tok.Tokenize(input)
+func Translate(input string) (string, error) {
+	t, err := getTokenizer()
+	if err != nil {
+		return "", fmt.Errorf("gachikoi: tokenizer initialization failed: %w", err)
+	}
+
+	tokens := t.Tokenize(input)
 	if len(tokens) == 0 {
-		return input
+		return input, nil
 	}
 
 	var builder strings.Builder
 	builder.Grow(len(input))
 
-	for _, t := range tokens {
-		surface := t.Surface
+	for _, token := range tokens {
+		surface := token.Surface
 		if surface == "" {
 			continue
 		}
@@ -52,5 +62,5 @@ func Translate(input string) string {
 		out = rule.pattern.ReplaceAllString(out, rule.to)
 	}
 
-	return out
+	return out, nil
 }

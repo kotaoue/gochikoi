@@ -2,6 +2,10 @@
 
 あーうーひひーん
 
+## Requirements
+
+- Go 1.26 or later
+
 ## Usage
 
 ```sh
