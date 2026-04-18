@@ -2,6 +2,8 @@ package gachikoi
 
 import "regexp"
 
+// postRules contains post-processing rules applied after tokens are joined.
+// It finalizes normalization for boundary-crossing and ending variations.
 var postRules = []replaceRule{
 	{regexp.MustCompile(`にゃい`), `ない`},
 	{regexp.MustCompile(`にゃん`), `なん`},

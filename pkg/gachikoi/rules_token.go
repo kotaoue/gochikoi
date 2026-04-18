@@ -2,6 +2,8 @@ package gachikoi
 
 import "regexp"
 
+// tokenRules contains regex replacement rules applied per token.
+// It runs after lexicalRules to normalize in-token sounds and spellings.
 var tokenRules = []replaceRule{
 	{regexp.MustCompile(`んちゃ`), `んた`},
 	{regexp.MustCompile(`ちゃい`), `さい`},
