@@ -30,6 +30,16 @@ go run . "ちこきゅちこきゅ〜"
   - After `normalRules`: `ちこくちこく〜`
   - After `finalRules`: `ちこくちこく〜`
 
+- Concrete example (requested style):
+  - Input:
+    - `ちこきゅちこきゅ〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのはっぴぃばえんたいんよ`
+  - After `specialRules`:
+    - `ちこきゅちこきゅ〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのハッピーバレンタインよ`
+  - After `normalRules`:
+    - `ちこくちこく〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのハッピーバレンタインよ`
+  - After `finalRules` (final output):
+    - `ちこくちこく〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんなへのハッピーバレンタインよ`
+
 ## example
 
 ### Case1
