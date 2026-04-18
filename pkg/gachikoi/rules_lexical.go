@@ -2,9 +2,9 @@ package gachikoi
 
 import "strings"
 
-// lexicalRules contains fixed string replacement rules.
+// specialRules contains fixed string replacements for known special patterns.
 // It is applied first to each token after tokenization.
-var lexicalRules = strings.NewReplacer(
+var specialRules = strings.NewReplacer(
 	"はっぴぃ", "ハッピー",
 	"ばえんたいん", "バレンタイン",
 	"ちぇぶん", "セブン",

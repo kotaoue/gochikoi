@@ -27,8 +27,8 @@ func normalizeToken(surface string) string {
 		return surface
 	}
 
-	normalized := lexicalRules.Replace(surface)
-	for _, rule := range tokenRules {
+	normalized := specialRules.Replace(surface)
+	for _, rule := range normalRules {
 		normalized = rule.pattern.ReplaceAllString(normalized, rule.to)
 	}
 
@@ -58,7 +58,7 @@ func Translate(input string) (string, error) {
 	}
 
 	out := builder.String()
-	for _, rule := range postRules {
+	for _, rule := range finalRules {
 		out = rule.pattern.ReplaceAllString(out, rule.to)
 	}
 
