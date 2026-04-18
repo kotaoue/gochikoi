@@ -30,15 +30,17 @@ go run . "ちこきゅちこきゅ〜"
   - After `normalRules`: `ちこくちこく〜`
   - After `finalRules`: `ちこくちこく〜`
 
-- Concrete example (requested style):
-  - Input:
-    - `ちこきゅちこきゅ〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのはっぴぃばえんたいんよ`
-  - After `specialRules`:
-    - `ちこきゅちこきゅ〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのハッピーバレンタインよ`
-  - After `normalRules`:
-    - `ちこくちこく〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのハッピーバレンタインよ`
-  - After `finalRules` (final output):
-    - `ちこくちこく〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんなへのハッピーバレンタインよ`
+- Concrete example (Mermaid flow):
+
+```mermaid
+flowchart TD
+  A["Input<br/>ちこきゅちこきゅ〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのはっぴぃばえんたいんよ"]
+  B["After specialRules<br/>ちこきゅちこきゅ〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのハッピーバレンタインよ"]
+  C["After normalRules<br/>ちこくちこく〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんにゃへのハッピーバレンタインよ"]
+  D["After finalRules (final output)<br/>ちこくちこく〜🏃‍♂️‍➡️🏃‍♂️‍➡️🏃‍♂️‍➡️🍫🍫🫶あちゃちかやみんなへのハッピーバレンタインよ"]
+
+  A --> B --> C --> D
+```
 
 ## example
 
