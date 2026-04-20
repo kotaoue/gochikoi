@@ -2,6 +2,47 @@
 
 あーうーひひーん
 
+## Requirements
+
+- Go 1.26 or later
+
+## Usage
+
+```sh
+go run . "ちこきゅちこきゅ〜あちゃちかやみんにゃへのはっぴぃばえんたいんよ"
+ちこくちこく〜あちゃちかやみんなへのハッピーバレンタインよ
+```
+
+## Normalization Flow
+
+- `specialRules` (fixed special patterns)
+  - Applies fixed string replacements for known patterns on each token.
+  - Example: `はっぴぃ` -> `ハッピー`, `ばえんたいん` -> `バレンタイン`
+- `normalRules` (regular per-token rules)
+  - Applies regex-based normalization per token for common in-token sound/spelling variations.
+  - Example: `ちゃ` -> `た`, `ちゅ` -> `す`
+- `finalRules` (final post-processing after join)
+  - Applies regex-based normalization after tokens are joined, including ending-like and boundary-crossing adjustments.
+  - Example: `きゅ` -> `く`, `ごめんにゃ` -> `ごめんね`, `にゃい` -> `ない`
+
+- Transformation image for input text:
+  - Input: `ちこきゅちこきゅ〜`
+  - After `specialRules`: `ちこきゅちこきゅ〜`
+  - After `normalRules`: `ちこきゅちこきゅ〜`
+  - After `finalRules`: `ちこくちこく〜`
+
+- Concrete example (Mermaid flow):
+
+```mermaid
+flowchart TD
+  A["Input<br/>ちこきゅちこきゅ〜あちゃちかやみんにゃへのはっぴぃばえんたいんよ"]
+  B["After specialRules<br/>ちこきゅちこきゅ〜あちゃちかやみんにゃへのハッピーバレンタインよ"]
+  C["After normalRules<br/>ちこきゅちこきゅ〜あちゃちかやみんにゃへのハッピーバレンタインよ"]
+  D["After finalRules (final output)<br/>ちこくちこく〜あちゃちかやみんなへのハッピーバレンタインよ"]
+
+  A --> B --> C --> D
+```
+
 ## example
 
 ### Case1
